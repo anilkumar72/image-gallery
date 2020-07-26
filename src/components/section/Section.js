@@ -1,8 +1,8 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect} from 'react'
 import styled from 'styled-components'
-import axios from "axios";
-import {API_LINK} from "../../api/Unsplash";
 import Image from "./Image";
+import {connect} from "react-redux";
+import {thunk_action_creator} from "../../redux/fetchDataReducer";
 
 
 const Wrapper = styled.section`
@@ -12,20 +12,29 @@ display: grid;
     grid-gap: 15px;
 `;
 
-export default () => {
-    const [Idata, SetIdata] = useState([])
+const Section= ({imgData,dispatch}) => {
     useEffect(() => {
-        axios.get(API_LINK).then(resp => SetIdata(resp.data))
+     dispatch(thunk_action_creator())
+        console.log(imgData)
 
-    }, [])
+    })
     return (
         <Wrapper>
             {
-                Idata.map((item, index) => {
+                Array.from(imgData).map((item, index) => {
                     const url = item.urls.regular;
-                    return <Image imgsrc={url} key={index} imgclass={`img${index}`}/>
+                    const description = item.description;
+                    return <Image imgsrc={url} key={index} imgclass={`img${index}`} description={description}/>
                 })
             }
         </Wrapper>
     )
 }
+
+const mapStateToProps=(state)=>{
+    return{
+        imgData:state.imgData
+    }
+}
+
+export default connect(mapStateToProps)(Section);

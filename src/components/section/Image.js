@@ -1,26 +1,35 @@
 import React, {useState} from 'react'
 import styled from 'styled-components'
-import  '../../styles.css'
+import '../../styles.css'
 import OverLay from "./OverLay";
 
-
-const Image = styled.img`
+const ImageBlock = styled.img`
     width: 100%;
     height: 100%;
     object-fit: cover;
     position: relative;
 `;
 
-export default ({imgsrc,imgclass}) => {
-    const [overlay,setOverlay]=useState(false);
+const Image = (props) => {
 
+    const [Overlay,setOverlay]=useState(false)
+
+    const handelOverlay = () => {
+        setOverlay(true)
+    }
+    const handleRemoveOverlay = () => {
+
+        setOverlay(false)
+    }
 
     return (<>
-        <Image src={imgsrc} className={imgclass} alt={imgclass}  onMouseOver={() => setOverlay(true)}
-             />
-            {overlay && <OverLay imgclass={imgclass} onMouseLeave={() => setOverlay(false)}  />
-           }
-
-</>
+            <ImageBlock src={props.imgsrc} className={props.imgclass} alt={props.imgclass} onMouseOver={handelOverlay}
+            />
+            { Overlay&& <OverLay imgclass={props.imgclass} description={props.description} handleRemoveOverlay={handleRemoveOverlay}/>}
+        </>
     )
 }
+
+
+
+export default Image;
