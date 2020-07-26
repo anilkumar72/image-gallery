@@ -10,7 +10,7 @@ const ImageBlock = styled.img`
     position: relative;
 `;
 
-const Image = (props) => {
+const SectionImage = (props) => {
 
     const [Overlay,setOverlay]=useState(false)
 
@@ -25,11 +25,12 @@ const Image = (props) => {
     return (<>
             <ImageBlock src={props.imgsrc} className={props.imgclass} alt={props.imgclass} onMouseOver={handelOverlay}
             />
-            { Overlay&& <OverLay imgclass={props.imgclass} description={props.description} handleRemoveOverlay={handleRemoveOverlay}/>}
+            { Overlay&& <OverLay imgclass={props.imgclass} description={props.description} userName={props.userName}
+                                 handleRemoveOverlay={handleRemoveOverlay} profileImg={props.profileImg}/>}
         </>
     )
 }
 
 
 
-export default Image;
+export default SectionImage;

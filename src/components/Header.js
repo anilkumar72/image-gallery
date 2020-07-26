@@ -10,18 +10,20 @@ max-width: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
-
 `;
+const RouteLink =styled(Link)`
+margin-left: 50px;
+text-decoration: none;
+font-size: 30px;
+color: black;
+font-family: Roboto,sans-serif;
+`
 
 export default () => {
     return (
         <Wrapper>
-
-                <Link to='/'>Home</Link><br/>
-                <Link to='protected'>Protected</Link><br/>
-                <button >Login</button><br/>
-                <button >Logout</button>
-
+                <RouteLink to='/'>Home</RouteLink><br/>
+                <RouteLink to='/edit'>Edit</RouteLink><br/>
         </Wrapper>
     )
 }

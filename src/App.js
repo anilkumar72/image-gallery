@@ -1,8 +1,9 @@
 import React from 'react';
 import './styles.css';
 import Header from "./components/Header";
-import Section from "./components/section/Section";
+import Section from "./components/mainSection/Section";
 import {Route} from "react-router-dom";
+import EditImages from "./components/editSection/EditContainer";
 
 function App() {
 
@@ -10,6 +11,7 @@ function App() {
         <div className="App">
             <Header/>
            <Route exact path='/' component={Section}/>
+            <Route exact path='/edit' component={EditImages}/>
         </div>
     );
 }
