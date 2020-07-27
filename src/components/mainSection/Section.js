@@ -13,7 +13,7 @@ display: grid;
    margin: 15px;
 `;
 const Button = styled.button`
-background-color: rgb(8, 76, 255);
+background-color: #3492ff;
 height: 50px;
 color: #fff;
 font-size: 20px;

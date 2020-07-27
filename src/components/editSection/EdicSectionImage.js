@@ -56,7 +56,7 @@ position: absolute;
 }
 }
 button{
-background-color: rgb(8, 76, 255);
+background-color: #3492ff;
 height: 50px;
 color: #fff;
 font-size: 20px;
