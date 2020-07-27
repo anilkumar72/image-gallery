@@ -99,12 +99,12 @@ const EditSectionImage = ({imgsrc, description, userName, profileImg, imgData, u
                 <img src={imgsrc} alt={userName}/>
                 <TextDiv>
                     <img src={profileImg} alt={userName}/>
-                    {/*<form className='inputDiv' onSubmit={handleSubmit}>*/}
-                    {/*    <input type='text' value={inputValue.userName} name='userName' placeholder='user name' onChange={handleChange}*/}
-                    {/*    />*/}
-                    {/*    <input type='text' value={inputValue.description} name='description' placeholder='description' onChange={handleChange}/>*/}
-                    {/*    <button onClick={handleSubmit}>save</button>*/}
-                    {/*</form>*/}
+                    <form className='inputDiv' onSubmit={handleSubmit}>
+                        <input type='text' value={inputValue.userName} name='userName' placeholder='user name' onChange={handleChange}
+                        />
+                        <input type='text' value={inputValue.description} name='description' placeholder='description' onChange={handleChange}/>
+                        <button onClick={handleSubmit}>save</button>
+                    </form>
 
                     {succ?<p className='successtext'>Successfully updated</p>:  <p>. </p>}
                 </TextDiv>
