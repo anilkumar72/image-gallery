@@ -10,7 +10,7 @@ max-width: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
-background-color: #191919;
+background-color: #2e3d49;
 `;
 const RouteLink =styled(Link)`
 margin-left: 50px;

@@ -5,7 +5,7 @@ import EdicSectionImage from "./EdicSectionImage";
 
 
 const Wrapper = styled.section`
-margin-top: 20px;
+padding-top: 20px;
 `;
 
 const EditContainer = ({imgData,auth}) => {

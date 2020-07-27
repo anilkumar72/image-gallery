@@ -8,7 +8,7 @@ import {update_data} from "../../redux/fetchDataReducer";
 const Wrapper = styled.section`
 display: flex;
 justify-content: center;
-margin-bottom: 20px;
+margin-bottom: 40px;
 `;
 const MainBlock = styled.div`
 width: 70vw;
@@ -16,7 +16,13 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0 15px 0 0;
-box-shadow: rgba(8, 76, 255, 0.23) 2px 2px 10px 0;
+  box-shadow:
+  0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048),
+  0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072),
+  0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  100px 0 80px rgba(0, 0, 0, 0.12);
 img{
 width: 600px;
 height: 400px;
@@ -42,28 +48,30 @@ display: flex;
 justify-content: space-between;
 margin-bottom: 25px;
 input{
-height: 30px;
-box-shadow: rgba(8, 76, 255, 0.23) 2px 2px 10px 0;
-    font-size: 18px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgb(0, 0, 0);
-    border-image: initial;
-    font-family: Roboto,sans-serif;
+padding-left: 10px;
+border-radius: 3px;
+font-family: Roboto,sans-serif;
+height: 45px;
+outline: none;
+font-size: 17px;
+margin-bottom: 15px;
+border: 1px solid black;
 }
 .successtext{
 position: absolute;
 }
 }
 button{
-background-color: #3492ff;
-height: 50px;
+height: 55px;
+width: 120px;
 color: #fff;
-font-size: 20px;
 border: none;
-outline: none;
- font-family: Roboto,sans-serif;
- cursor: pointer;
+font-size: 18px;
+outline-style: none;
+background-color: 
+#3492ff;
+align-self: center;
+cursor: pointer;
 }
 
 `;
