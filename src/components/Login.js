@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import styled from 'styled-components'
 import {connect} from "react-redux";
 import {useHistory} from 'react-router-dom';
+import {thunk_action_creator} from "../redux/fetchDataReducer";
 
 
 
@@ -15,6 +16,7 @@ const Login = ({dispatch, isAuth}) => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
+        dispatch(thunk_action_creator())
         if(login.uName==='admin'&&login.pass==='pass'){
 
             dispatch({

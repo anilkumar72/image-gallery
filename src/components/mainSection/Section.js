@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import styled from 'styled-components'
 import SectionImage from "./SectionImage";
 import {connect} from "react-redux";
@@ -22,12 +22,17 @@ outline: none;
  font-family: Roboto,sans-serif;
  cursor: pointer;
 `;
-const Section = ({imgData, dispatch}) => {
+const Section = ({imgData, dispatch,auth}) => {
 
-    // const [initload,setInitload]=useState(false)
+    // const [initload,setInitload]=useState(true)
     // useEffect(()=>{
     //     dispatch(thunk_action_creator())
-    // },[initload])
+    // },[])
+
+    // if (auth&&initload){
+    //     dispatch(thunk_action_creator())
+    //     setInitload(false)
+    // }
 
     const pulldata=()=>{
         dispatch(thunk_action_creator())
@@ -43,7 +48,6 @@ const Section = ({imgData, dispatch}) => {
                     const description = item.description;
                     const username = item.username;
                     const profileImg = item.profileImg;
-
                     return <SectionImage imgsrc={url} key={index} imgclass={`img${index}`} description={description}
                                          userName={username} profileImg={profileImg}/>
                 })}
