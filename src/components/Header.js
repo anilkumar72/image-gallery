@@ -10,12 +10,13 @@ max-width: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
+background-color: #191919;
 `;
 const RouteLink =styled(Link)`
 margin-left: 50px;
 text-decoration: none;
 font-size: 30px;
-color: black;
+color: #fff;
 font-family: Roboto,sans-serif;
 `
 

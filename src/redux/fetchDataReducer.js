@@ -1,5 +1,6 @@
 import axios from "axios";
 import {API_LINK} from "../api/Unsplash";
+import mapObjects from "../misc/mapObjects";
 
 
 //Action Types
@@ -26,12 +27,7 @@ export const thunk_action_creator = () => {
         return axios.get(API_LINK).then(resp => {
             let dataArray = [];
             Array.from(resp.data).map((item, index) => {
-                let obj ={}
-                obj['url']= item.urls.regular;
-                obj['description'] = item.description;
-                obj['username'] = item.user.username;
-                obj['profileImg'] = item.user.profile_image.medium;
-                dataArray.push(obj)
+                dataArray.push(mapObjects(item))
                 // dispatch(receive_data(url, description, username, profileImg))
                 return null;
             })
@@ -44,7 +40,7 @@ export const thunk_action_creator = () => {
 //reducer
 
 const initialState = {
-    imgData:{}
+    imgData:''
 };
 
 export const fetchDataReducer = (state = initialState, action) => {

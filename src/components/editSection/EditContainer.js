@@ -5,7 +5,7 @@ import EdicSectionImage from "./EdicSectionImage";
 
 
 const Wrapper = styled.section`
-
+margin-top: 20px;
 `;
 
 const EditContainer = ({imgData}) => {
@@ -16,8 +16,9 @@ const EditContainer = ({imgData}) => {
                 const description = item.description;
                 const username = item.username;
                 const profileImg = item.profileImg;
-                return <EdicSectionImage imgsrc={url} key={index} imgclass={`img${index}`} description={description}
-                                     userName={username} profileImg={profileImg}/>
+                const upindex=index;
+                return <EdicSectionImage imgsrc={url} key={upindex} upindex={upindex} imgclass={`img${index}`} description={description}
+                                     userName={username} profileImg={profileImg}  imgData={imgData}/>
             })}
         </Wrapper>
     )
