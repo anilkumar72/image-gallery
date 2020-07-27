@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import SectionImage from "./SectionImage";
 import {connect} from "react-redux";
@@ -54,7 +54,8 @@ const Section = ({imgData, dispatch}) => {
 
 const mapStateToProps = (state) => {
     return {
-        imgData: state.imgData
+        imgData: state.fetchData.imgData,
+        auth:state.fetchAuth.auth
     }
 }
 

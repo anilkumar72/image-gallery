@@ -25,7 +25,7 @@ const EditContainer = ({imgData}) => {
 }
 const mapStateToProps = (state) => {
     return {
-        imgData: state.imgData
+        imgData: state.fetchData.imgData
     }
 }
 

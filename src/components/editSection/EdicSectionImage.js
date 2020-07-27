@@ -115,7 +115,7 @@ const EditSectionImage = ({imgsrc, description, userName, profileImg, imgData, u
 }
 const mapStateToProps = (state) => {
     return {
-        imgData: state.imgData
+        imgData: state.fetchData.imgData
     }
 }
 export default connect(mapStateToProps)(EditSectionImage)
